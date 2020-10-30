@@ -1,6 +1,4 @@
-int j=3  //number of iteration
 
-for (int i=0; i < j; i++) {
 pipeline {
     agent {
 		label 'master'
@@ -19,7 +17,12 @@ pipeline {
                defaultValue: true,
                description: 'Deselect this button if you DO NOT need to reboot APP servers')
         }
-        stages {
+        stages 
+	{
+		script{
+			int j=3  //number of iteration
+
+for (int i=0; i < j; i++) {
             stage('reboot APP servers') {
                 when {
                     expression {
@@ -78,7 +81,8 @@ pipeline {
                     }
                 }
             }
-            stage('run warmup and formal test') {
+            stage('run warmup and formal test') 
+		{
                 when {
                     expression {
                         return params.Warmup_and_Formal_Test
@@ -97,7 +101,7 @@ pipeline {
                     }
                 }
             }
-        }
+}}}//stages
 
-    }
+    
 }
