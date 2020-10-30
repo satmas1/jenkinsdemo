@@ -1,6 +1,6 @@
 pipeline {
     agent {
-		label 'windows_slave_load'
+		label 'master'
 	}
         parameters {
             string(name: 'buildName', 
