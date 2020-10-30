@@ -1,6 +1,3 @@
-int j=3  //number of iteration
-
-for (int i=0; i < j; i++) {
 pipeline {
 
         parameters {
@@ -98,4 +95,3 @@ pipeline {
         }
 
     }
-}
