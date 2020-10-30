@@ -1,7 +1,6 @@
-
 pipeline {
     agent {
-		label 'master'
+		label 'windows_slave_load'
 	}
         parameters {
             string(name: 'buildName', 
@@ -17,12 +16,7 @@ pipeline {
                defaultValue: true,
                description: 'Deselect this button if you DO NOT need to reboot APP servers')
         }
-        stages 
-	{
-		script{
-			int j=3  //number of iteration
-
-for (int i=0; i < j; i++) {
+        stages {
             stage('reboot APP servers') {
                 when {
                     expression {
@@ -81,8 +75,7 @@ for (int i=0; i < j; i++) {
                     }
                 }
             }
-            stage('run warmup and formal test') 
-		{
+            stage('run warmup and formal test') {
                 when {
                     expression {
                         return params.Warmup_and_Formal_Test
@@ -101,7 +94,6 @@ for (int i=0; i < j; i++) {
                     }
                 }
             }
-}}}//stages
+        }
 
-    
-}
+    }
