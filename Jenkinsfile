@@ -1,5 +1,3 @@
-int j=3 
-for (int i=0; i < j; i++) {
 pipeline {
     agent {label 'master'}
         parameters {
@@ -97,4 +95,3 @@ pipeline {
         }
 
     }
-}
