@@ -1,10 +1,7 @@
-int j=3  //number of iteration
-
+int j=3 
 for (int i=0; i < j; i++) {
 pipeline {
-    agent {
-		label 'master'
-	}
+    agent {label 'master'}
         parameters {
             string(name: 'buildName', 
                defaultValue: 'Nightly Build',
