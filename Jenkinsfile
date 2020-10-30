@@ -83,7 +83,7 @@ pipeline {
                 }
                 steps {
                     build job: 'demo1-1'
-                    sh 'echo " run warmup and formal test Build Number $BUILD_NUMBER "'
+                    sh 'echo " run warmup and formal test for Build Number $BUILD_NUMBER "'
                 }
                 post {
                     success {
